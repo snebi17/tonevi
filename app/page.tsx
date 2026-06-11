@@ -19,8 +19,8 @@ export default function Home() {
         <Image src={Logo} objectFit="contain" alt="Logo"></Image>
         <h1 style={{ fontSize: "4rem", textAlign: "center", fontFamily: 'libre-baskerville', fontStyle: 'italic' }}>Coming soon</h1>
         <h1 style={{ fontSize: "1.2rem", textAlign: "center", textTransform: 'uppercase', marginTop: '2rem' }}>
-          <a href="https://maps.app.goo.gl/ubUEMJHx13Mt7QKF7">Slovenija, Goriška brda, Zali Breg 6</a><br></br>
-          <a href="mailto:tonevi.markocic@gmail.com">tonevi.markocic@gmail.com</a> · <a href="">Leon 040 683 481</a>
+          <a target="_blank" href="https://maps.app.goo.gl/ubUEMJHx13Mt7QKF7">Goriška brda, Zali Breg 6, Slovenija</a><br></br>
+          <a href="mailto:tonevi.markocic@gmail.com">tonevi.markocic@gmail.com</a> · <a href="tel:+386040683481">Leon 040 683 481</a>
         </h1>
       </div>
     </section>
