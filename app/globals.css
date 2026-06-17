@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+/* =========================
+   DESIGN TOKENS (SOURCE OF TRUTH)
+   ========================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* BACKGROUND / TEXT */
+  --color-bg: 0 0% 4%;
+  --color-fg: 0 0% 98%;
+
+  /* WINE PALETTE */
+  --color-wine-50: 355 60% 92%;
+  --color-wine-500: 345 65% 45%;
+  --color-wine-700: 345 70% 28%;
+  --color-wine-900: 345 75% 14%;
+
+  /* TYPOGRAPHY */
+  --font-display: var(--font-libre-baskerville);
+  --font-mono: var(--font-inconsolata);
+  --font-body: var(--font-inconsolata);
+
+
+  /* RADIUS */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inconsolata);
-  --font-mono: var(--font-libre-baskerville);
+@theme {
+  /* COLORS */
+  --color-bg: hsl(var(--color-bg));
+  --color-fg: hsl(var(--color-fg));
+
+  --color-wine-50: hsl(var(--color-wine-50));
+  --color-wine-500: hsl(var(--color-wine-500));
+  --color-wine-700: hsl(var(--color-wine-700));
+  --color-wine-900: hsl(var(--color-wine-900));
+
+  /* TYPOGRAPHY */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* RADIUS */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* GLOBAL BASE STYLE (luxury feel baseline) */
+html {
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  /* font-family: Arial, Helvetica, sans-serif; */
+  background: hsl(var(--color-bg));
+  color: hsl(var(--color-fg));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
 }
